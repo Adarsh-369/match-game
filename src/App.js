@@ -279,10 +279,10 @@ class App extends Component {
   imageClick = thumbnailUrl => {
     const {imgUrl} = this.state
     const imageValue = imagesList.filter(
-      eachValue => eachValue.thumbnailUrl == thumbnailUrl,
+      eachValue => eachValue.thumbnailUrl === thumbnailUrl,
     )
     const {imageUrl} = imageValue[0]
-    if (imageUrl == imgUrl) {
+    if (imageUrl === imgUrl) {
       const newImgUrl = 
          imagesList[Math.floor(Math.random() * imagesList.length)].imageUrl
       console.log(newImgUrl)
@@ -346,7 +346,7 @@ class App extends Component {
                    <button 
                      type="button"
                      className={`tab-button ${
-                       category == eachValue.tabId ? 'highlight-text' : ''
+                       category === eachValue.tabId ? 'highlight-text' : ''
                      }`}
                      onClick={() => this.clickTab(eachValue.tabId)}
                   >
